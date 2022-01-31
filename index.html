@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca CEP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container" id="app">
+    <h1 class="title">
+      Busca CEP
+    </h1>
+
+    <form action="" class="form">
+      <label for="cep" class="label">
+        CEP
+      </label>
+
+      <input
+        type="text"
+        id="cep"
+        class="input"
+        placeholder="12345678"
+        autofocus
+        required
+        v-model="cep"
+        />
+
+      <button
+        class="button"
+        v-on:click="fetchCEP">
+        Buscar
+      </button>
+    </form>
+
+    <ul class="list">
+      <li
+        class="list-item"
+        v-for="item in data">
+          {{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
